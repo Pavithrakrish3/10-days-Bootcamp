@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pearls Online Pearl Jewelry</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .headercontainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            color: #e1a365;
+            font-weight: bold;
+        }
+        
+        .nav1 {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav1 a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px;
+            transition: color 0.3s;
+        }
+
+        .nav1 a:hover {
+            color: #65cee1;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            
+        }
+
+        .search-bar input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            padding: 8px 12px;
+            background-color: #006400;
+            color: white;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .login-button {
+            padding: 8px 12px;
+            background-color: #e1a365;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: #3794b3;
+        }
+        
+        .headimg img {
+            width: 100%;
+        }
+        
+        .categories {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .sectiontitle {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 28px;
+            color: #8b6b4a;
+        }
+
+        .nav2 {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+
+        .nav2 a {
+            text-decoration: none;
+            color: #8b6b4a;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: 1px solid #e1a365;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav2 a:hover {
+            background-color: #4d99b9;
+            color: white;
+        }
+        
+        .products {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 25px;
+        }
+        
+        .productcard {
+            border: 1px solid #fbf1f1;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-basis: 23%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .productcard img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .productcard img:hover {
+            transform: scale(1.07);
+        }
+        
+        .product-info {
+            padding: 15px;
+        }
+        
+        .product-title {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #f58aa7;
+            color: black;
+            padding: 50px 20px 20px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex-basis: 20%;
+        }
+        
+        .footimg img {
+            width: 100%;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #8b6b4a;
+        }
+        
+        .footer-column ul {
+            list-style-type: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #d3cece;
+            color: black;
+        }
+
+        /* Login */
+        .modal-overlay {
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden; /* Hide by default */
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .login-form-container {
+            background-color: #fefefe;
+            padding: 40px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #aaa;
+            text-decoration: none;
+        }
+        
+        .close-button:hover {
+            color: black;
+        }
+        
+        .login-form-container h2 {
+            color: #8b6b4a;
+            margin-bottom: 20px;
+        }
+
+        .login-form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .login-form-container input {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .login-form-container button {
+            padding: 12px;
+            background-color: #006400;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .login-form-container button:hover {
+            background-color: #004d00;
+        }
+
+        .login-links {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .login-links a {
+            color: #e1a365;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .login-links a:hover {
+            text-decoration: underline;
+        }
+
+        .modal-overlay:target {
+            visibility: visible;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="headercontainer">
+            <div class="logo">PEARLS ONLINE</div>
+            <nav class="nav1">
+                <a href="#">Home</a>
+                <a href="#">Pearls</a>
+                <a href="#">Jewelry</a>
+                <a href="#">Collections</a>
+                <a href="#">About</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+                <a href="#loginModal" class="login-button">Login</a>
+            </div>
+        </div>
+    </header>
+    <main>
+    
+    <div class="headimg">
+        <img src="https://pearlsonline.in/wp-content/uploads/2024/02/Slider-04.png" alt="">
+    </div>
+    
+    <div class="categories">
+        <h2 class="sectiontitle">Expressing your beauty with our Product</h2>
+        <p>Discover elegance in our carefully selected jewelry collection that beautifully captures the timeless charm of pearls.
+            Each piece celebrates femininity, expresses individuality, and enhances your unique style.</p>
+        <br>
+
+        <nav class="nav2">
+            <a href="#">BEAD BRACELETS</a>
+            <a href="#">CHAIN BRACELETS</a>
+            <a href="#">CHAINS</a>
+            <a href="#">EARRINGS</a>
+        </nav>
+        
+    </div>
+    
+    <div class="products">
+        <h2 class="sectiontitle">Dazzle in our curated categories</h2>
+        <div class="product-grid">
+            <div class="productcard">
+                <img src="https://pearlsonline.in/wp-content/uploads/2024/02/Bead-Bracelet-Gallery.jpg" alt="Akoya Pearl Set" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">BEAD BRACELETS</h3>
+                    <p>Rs.12,999</p>
+                </div>
+            </div>
+            <div class="productcard">
+                <img src="https://pearlsonline.in/wp-content/uploads/2024/02/Chain-Bracelet-Gallery.jpg" alt="Tahitian Pearl Necklace" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">CHAIN BRACELETS</h3>
+                    <p>Rs.18,500</p>
+                </div>
+            </div>
+            <div class="productcard">
+                <img src="https://pearlsonline.in/wp-content/uploads/2024/02/Chain-Gallery.jpg" alt="Freshwater Pearl Earrings" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">CHAINS</h3>
+                    <p>Rs.6,999</p>
+                </div>
+            </div>
+            <div class="productcard">
+                <img src="https://pearlsonline.in/wp-content/uploads/2024/02/Earrings-Gallery.jpg" alt="Pearl & Diamond Ring" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">EARRINGS</h3>
+                    <p>Rs.22,999</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <div id="loginModal" class="modal-overlay">
+        <div class="login-form-container">
+            <a href="#" class="close-button">&times;</a>
+            <form>
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footimg">
+                <img src="https://pearlsonline.in/wp-content/uploads/2024/01/Pearls-online-logo.png">
+            </div>
+            <div class="footer-column">
+                <h3>MY ACCOUNT</h3>
+                <ul>
+                    <li>My Account</li>
+                    <li>Cart</li>
+                    <li>Orders</li>
+                    <li>Checkout</li>
+                    <li>Wishlist</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>CUSTOMER SUPPORT</h3>
+                <ul>
+                    <li>Terms & Conditions</li>
+                    <li>Privacy policy</li>
+                    <li>Shipping & Delivery policy</li>
+                    <li>Refund & Cancellation policy</li>
+                    <li>Payment policy</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>CONTACT INFO</h3>
+                <ul>
+                    <li>Pearlsonline</li>
+                    <li>Pasumalai, Madurai.</li>
+                    <li>pearlsbtt@gmail.com</li>
+                    <li>www.pearlsonline.in</li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="copyright">
+            <p>© 2023 Pearls Online. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

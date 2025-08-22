@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biotique - Natural Makeup</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    body {
+        font-family: Arial;
+        margin: 0;
+        padding: 0;
+    }
+
+    .top-promo {
+        background-color: #eee4e4;
+        text-align: center;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        height: 40px; 
+    }
+
+    .search-bar input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .search-bar button {
+        padding: 8px 12px;
+        background-color: #006400;
+        color: white;
+        border: 0;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .utility-nav  {
+        margin-left: 15px;
+    }
+
+    .main-nav {
+        background-color: #006400; 
+        padding: 10px 20px;
+    }
+
+    .main-nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .main-nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+    }
+
+    .main-nav a.active {
+        font-weight: bold;
+        border-bottom: 2px solid white;
+    }
+
+    .hero-banner {
+        position: relative;
+        width: 100%;
+        height: 500px; 
+        
+    }
+
+    .banner-bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+    }
+
+    .banner-content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 10%; 
+        height: 100%;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    }
+
+    .banner-text h1 {
+        font-size: 3em;
+        font-weight: normal;
+        line-height: 1.2;
+        max-width: 500px;
+    }
+
+    
+    .product-listing-section {
+        padding: 20px;
+        background-color: #f5eded;
+    }
+
+    .product-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .product-filters button {
+        padding: 8px 16px;
+        border: 1px solid #cbc9c9;
+        border-radius: 20px;
+        background-color: #f8f8f8;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .product-filters button.active {
+        background-color: #e0f2e0; 
+        border-color: #086e08; 
+        color: #006400;
+    }
+
+    .sort-by {
+        display: flex;
+        align-items: center;
+    }
+
+    .sort-by select {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .product-card {
+        text-align: center;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .product-card img {
+        max-width: 100%;
+        height: 80%;
+    }
+
+    .product-card h3 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 10px 0 5px;
+    }
+
+    .product-card p {
+        font-size: 14px;
+        color: #555;
+        margin: 5px 0;
+    }
+
+    .product-card .rating {
+        color: #ffc107; /* Star color */
+        margin-top: 5px;
+    }
+
+    .product-card .price {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        margin-top: 10px;
+    }
+    .product-grid{
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            display: flex;
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="top-bar">
+        <div class="top-promo">
+        </div>
+        <div class="main-header">
+            <div class="logo">
+                <img src="https://cdn.shopify.com/s/files/1/0652/3787/6974/files/logo-svg.png?v=1671013175" alt="Biotique Logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search For Natural Makeup">
+                <button>Search</button>
+            </div>
+            <div class="utility-nav">
+                <button>INR</button>
+                <button>Support</button>
+                <button>LOGIN</button>
+                <button>cart</button>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href=>COLLECTIONS</a></li>
+                <li><a href="#">SKIN</a></li>
+                <li><a href="#">HAIR</a></li>
+                <li><a href="#">BODY</a></li>
+                <li><a href="#">BABY</a></li>
+                <li><a href="#">MEN</a></li>
+                <li><a href="#">FRAGRANCE</a></li>
+                <li><a href="#">NATURAL MAKEUP</a></li>
+                <li><a href="#">GIFT PACKS</a></li>
+                <li><a href="#">OFFERS</a></li>
+                <li><a href="#">OUR STORY</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero-banner">
+            <img src="https://www.biotique.com/cdn/shop/files/01_Star_Mascara_24_Desktop_1920x600_eda53605-6545-4aef-a0d7-2cd7f748e2ab.jpg?v=1710154628" alt="Woman applying mascara" class="banner-bg">
+            <div class="banner-content">
+                <div class="banner-text">
+                </div>
+            </div>
+        </div>
+
+        <section class="product-listing-section">
+            <div class="product-header">
+                <div class="product-filters">
+                    <button>All</button>
+                    <button>Lips</button>
+                    <button>Eyes</button>
+                    <button>Face</button>
+                    <button>Star</button>
+                    <button>Diva</button>
+                    <button>Magic</button>
+                </div>
+                <div class="sort-by">
+                    <span>Sort By</span>
+                    <select>
+                        <option>Best Selling</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://www.biotique.com/cdn/shop/products/8904317301305-min_13fc54e6-c583-4397-9780-ce7f2cccce24.jpg?v=1665378149&width=533" alt="Magikisses Lip Balm">
+                    <h3>Magikisses Lip Balm - 4 Gm</h3>
+                    <p>Gives Nourishment to skin. Soothes the texture of lips. Gives even texture</p>
+                    <div class="rating">
+                        <span>★★★★★</span> 7 reviews
+                    </div>
+                    <div class="price">₹199.00</div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://www.biotique.com/cdn/shop/products/8904317301350_cookiecrumble_04-min.jpg?v=1669965041&width=533" alt="Magicolor Lipstick">
+                    <h3>Biotique Natural Makeup Magicolor Lipstick, Cookie Crumble</h3>
+                    <div class="rating">
+                        <span>★★★★☆</span> 4 reviews
+                    </div>
+                    <div class="price">₹125.00</div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://www.biotique.com/cdn/shop/products/8904317301237_gypsu_04-min.jpg?v=1665646290&width=533" alt="Magicare Foundation">
+                    <h3>Biotique Natural Makeup Magicare All Day Foundation, Gypsum, 30ml</h3>
+                    <div class="rating">
+                        <span>★★★★☆</span> 1 review
+                    </div>
+                    <div class="price">₹140.00</div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://www.biotique.com/cdn/shop/products/8904317300933_pearl_04-min.jpg?v=1665656888&width=533" alt="Magiccompact Clay">
+                    <h3>Biotique Natural Makeup Magiccompact Clay, 8g</h3>
+                    <div class="rating">
+                        <span>★★★★☆</span> 1 review
+                    </div>
+                    <div class="price">₹145.00</div>
+                </div>
+            </div>
+        </section>
+        
+        <div style="padding: 20px;">
+            <h1>Your Questions, Answered:</h1>
+            <p><strong>What are natural makeup products?</strong></p>
+            <p>Natural makeup products are cosmetics made from natural ingredients, plants, minerals, and other organic sources. These products are free from harmful chemicals, preservatives, and additives.</p>
+            <hr>
+            <p><strong>Does Biotique Natural Makeup provide good coverage?</strong></p>
+            <p>Yes, Biotique makeup products offer excellent coverage for a natural and flawless look. They are designed to enhance beauty while providing skincare benefits.</p>
+            <hr>
+            <p><strong>Which key natural ingredients does Biotique use in their makeup products?</strong></p>
+            <p>Biotique incorporates a variety of natural ingredients such as herbs, plant extracts, and minerals in their makeup products. Common ingredients include neem, almond, aloe vera, and turmeric, known for their skincare benefits.</p>
+            <hr>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Customer Support</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Return & Exchange</a></li>
+                    <li><a href="#">Shipping Locations</a></li>
+                    <li><a href="#">Return Request</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Ingredients Index</a></li>
+                    <li><a href="#">Hotel & Spa</a></li>
+                    <li><a href="#">Media</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Your Account</h3>
+                <ul>
+                    <li><a href="#">My Account</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Privacy and Terms</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </footer>
+</body>
+</html>
